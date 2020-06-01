@@ -1,0 +1,198 @@
+extends order
+block order
+  #id01.w3-modal
+    .w3-modal-content.w3-card-4.w3-animate-zoom(style='max-width:600px')
+      .w3-center
+        br
+        span.w3-button.w3-xlarge.w3-transparent.w3-display-topright(onclick="document.getElementById('id01').style.display='none'" title='Close') ×
+
+      form.w3-container(action='/order' method='post')
+        .w3-section
+          h3 Order Your Covered Foot Wears
+          select.w3-input.w3-animate-input.w3-border(name='particular' required='')
+            option(value='Cover') Cover
+          label
+            b Name
+          input.w3-input.w3-animate-input.w3-border.w3-margin-bottom(type='text' placeholder='Enter Your Name' name='name' required='').form-control
+          label
+            b Email Address
+          input.w3-input.w3-animate-input.w3-border(type='email' placeholder='Enter Your Email Address' name='email' required='').form-control
+          label
+          b Number of Pairs
+          input.w3-input.w3-animate-input.w3-border(type='number' name='pairs')
+          label
+          b Shoe Size
+          select.w3-input.w3-animate-input.w3-border(name='size' required='')
+            option(value='space')
+            option(value='40-41') 40-41
+            option(value='42-43') 42-43
+            option(value='44-45') 44-45
+          label
+          b Choose Your Preffered Designer
+          select.w3-input.w3-animate-input.w3-border(name='designer' required='')
+            option(value='space')
+            option(value='Chloe') Chloe
+            option(value='Gucci') Gucci
+            option(value='Fendi') Fendi
+            option(value='Zanooti') Zanooti
+            option(value='Versace') Versace
+            option(value='Prada') Prada
+            option(value='Bally') Bally
+            option(value='Louis Vuitton') Louis Vuitton
+          label
+          b Sole Type
+          select.w3-input.w3-animate-input.w3-border(name='price' required='')
+            option(value='space')
+            option(value=4500) Double
+            option(value=3500) Single
+          .w3-container.w3-border-top.w3-padding-16.w3-light-grey
+            input.w3-button.w3-green(type='submit' value='Order')
+        span.w3-right.w3-padding.w3-hide-small
+          button.w3-button.w3-red(onclick="document.getElementById('ido1).style.display='none'" type='button') Cancel
+  #id02.w3-modal
+    .w3-modal-content.w3-card-4.w3-animate-zoom(style='max-width:600px')
+      .w3-center
+        br
+        span.w3-button.w3-xlarge.w3-transparent.w3-display-topright(onclick="document.getElementById('id02').style.display='none'" title='Close') ×
+
+      form.w3-container(action='/order' method='post')
+        .w3-section
+          h3 Order Your Thong Foot Wears
+          select.w3-input.w3-animate-input.w3-border(name='particular' required='')
+            option(value='Thong') Thong
+          label
+            b Name
+          input.w3-input.w3-animate-input.w3-border.w3-margin-bottom(type='text' placeholder='Enter Your Name' name='name' required='').form-control
+          label
+            b Email Address
+          input.w3-input.w3-animate-input.w3-border(type='email' placeholder='Enter Your Email Address' name='email' required='').form-control
+          label
+          b Number of Pairs
+          input.w3-input.w3-animate-input.w3-border(type='number' name='pairs')
+          label
+          b Shoe Size
+          select.w3-input.w3-animate-input.w3-border(name='size' required='')
+            option(value='space')
+            option(value='40-41') 40-41
+            option(value='42-43') 42-43
+            option(value='44-45') 44-45
+          label
+          b Choose Your Preffered Designer
+          select.w3-input.w3-animate-input.w3-border(name='designer' required='')
+            option(value='space')
+            option(value='Chloe') Chloe
+            option(value='Gucci') Gucci
+            option(value='Fendi') Fendi
+            option(value='Zanooti') Zanooti
+            option(value='Versace') Versace
+            option(value='Prada') Prada
+            option(value='Bally') Bally
+            option(value='Louis Vuitton') Louis Vuitton
+          label
+          b Sole Type
+          select.w3-input.w3-animate-input.w3-border(name='price' required='')
+            option(value='space')
+            option(value=4500) Double
+            option(value=3500) Single
+          .w3-container.w3-border-top.w3-padding-16.w3-light-grey
+            input.w3-button.w3-green(type='submit' value='Order')
+        span.w3-right.w3-padding.w3-hide-small
+          button.w3-button.w3-red(onclick="document.getElementById('ido1).style.display='none'" type='button') Cancel
+  #id03.w3-modal
+    .w3-modal-content.w3-card-4.w3-animate-zoom(style='max-width:600px')
+      .w3-center
+        br
+        span.w3-button.w3-xlarge.w3-transparent.w3-display-topright(onclick="document.getElementById('id03').style.display='none'" title='Close') ×
+
+      form.w3-container(action='/order' method='post')
+        .w3-section
+          h3 Order Your Crossing Foot Wears
+          select.w3-input.w3-animate-input.w3-border(name='particular' required='')
+            option(value='Crossing') Crossing
+          label
+            b Name
+          input.w3-input.w3-animate-input.w3-border.w3-margin-bottom(type='text' placeholder='Enter Your Name' name='name' required='').form-control
+          label
+            b Email Address
+          input.w3-input.w3-animate-input.w3-border(type='email' placeholder='Enter Your Email Address' name='email' required='').form-control
+          label
+          b Number of Pairs
+          input.w3-input.w3-animate-input.w3-border(type='number' name='pairs')
+          label
+          b Shoe Size
+          select.w3-input.w3-animate-input.w3-border(name='size' required='')
+            option(value='space')
+            option(value='40-41') 40-41
+            option(value='42-43') 42-43
+            option(value='44-45') 44-45
+          label
+          b Choose Your Preffered Designer
+          select.w3-input.w3-animate-input.w3-border(name='designer' required='')
+            option(value='space')
+            option(value='Chloe') Chloe
+            option(value='Gucci') Gucci
+            option(value='Fendi') Fendi
+            option(value='Zanooti') Zanooti
+            option(value='Versace') Versace
+            option(value='Prada') Prada
+            option(value='Bally') Bally
+            option(value='Louis Vuitton') Louis Vuitton
+          label
+          b Sole Type
+          select.w3-input.w3-animate-input.w3-border(name='price' required='')
+            option(value='space')
+            option(value=4500) Double
+            option(value=3500) Single
+          .w3-container.w3-border-top.w3-padding-16.w3-light-grey
+            input.w3-button.w3-green(type='submit' value='Order')
+        span.w3-right.w3-padding.w3-hide-small
+          button.w3-button.w3-red(onclick="document.getElementById('ido1).style.display='none'" type='button') Cancel
+  #id04.w3-modal
+    .w3-modal-content.w3-card-4.w3-animate-zoom(style='max-width:600px')
+      .w3-center
+        br
+        span.w3-button.w3-xlarge.w3-transparent.w3-display-topright(onclick="document.getElementById('id04').style.display='none'" title='Close') ×
+
+      form.w3-container(action='/order' method='post')
+        .w3-section
+          h3 Order Your Sandals
+          select.w3-input.w3-animate-input.w3-border(name='particular' required='')
+            option(value='Sandals') Sandals
+          label
+            b Name
+          input.w3-input.w3-animate-input.w3-border.w3-margin-bottom(type='text' placeholder='Enter Your Name' name='name' required='').form-control
+          label
+            b Email Address
+          input.w3-input.w3-animate-input.w3-border(type='email' placeholder='Enter Your Email Address' name='email' required='').form-control
+          label
+          b Number of Pairs
+          input.w3-input.w3-animate-input.w3-border(type='number' name='pairs')
+          label
+          b Shoe Size
+          select.w3-input.w3-animate-input.w3-border(name='size' required='')
+            option(value='space')
+            option(value='40-41') 40-41
+            option(value='42-43') 42-43
+            option(value='44-45') 44-45
+          label
+          b Choose Your Preffered Designer
+          select.w3-input.w3-animate-input.w3-border(name='designer' required='')
+            option(value='space')
+            option(value='Chloe') Chloe
+            option(value='Gucci') Gucci
+            option(value='Fendi') Fendi
+            option(value='Zanooti') Zanooti
+            option(value='Versace') Versace
+            option(value='Prada') Prada
+            option(value='Bally') Bally
+            option(value='Louis Vuitton') Louis Vuitton
+          label
+          b Sole Type
+          select.w3-input.w3-animate-input.w3-border(name='price' required='')
+            option(value='space')
+            option(value=4500) Double
+            option(value=3500) Single
+          .w3-container.w3-border-top.w3-padding-16.w3-light-grey
+            input.w3-button.w3-green(type='submit' value='Order')
+        span.w3-right.w3-padding.w3-hide-small
+          button.w3-button.w3-red(onclick="document.getElementById('ido1).style.display='none'" type='button') Cancel

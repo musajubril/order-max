@@ -1,0 +1,113 @@
+extends layout
+block content
+  #content
+    nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+      button#sidebarToggleTop.btn.btn-link.d-md-none.rounded-circle.mr-3
+        i.fa.fa-bars
+      form.d-none.d-sm-inline-block.form-inline.mr-auto.ml-md-3.my-2.my-md-0.mw-100.navbar-search
+        .input-group
+          input#mySearch.form-control.bg-light.border-0.small(type='text' placeholder='Search for...' aria-label='Search' aria-describedby='basic-addon2')
+      ul.navbar-nav.ml-auto
+        .topbar-divider.d-none.d-sm-block
+        //  Nav Item - User Information 
+        li.nav-item.dropdown.no-arrow
+          a.nav-link.dropdown-toggle#userDropdown(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            span.mr-2.d-none.d-lg-inline.text-gray-600.small 
+        .dropdown-divider
+        li.nav-item.dropdown.no-arrow
+          a.nav-link.dropdown-toggle#userDropdown(href='/users/logout' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            span.mr-2.d-none.d-lg-inline.text-gray-600.small
+            i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+            | Logout
+
+    .container-fluid
+      #content-wrapper(class='d-flex flex-column')
+        #content
+          div(class='container-fluid')
+            div(class='w3-content w3-margin-top')
+              div(class='w3-container  w3-white')
+                h3 Update Progress
+                ul(class='nav nav-pills' role='tablist')
+                  li(class='nav-item')
+                    button(class='m-3 btn btn-sm btn-danger ' onclick='stageOne()' )
+                      | Purchased
+                      br
+                      | Materials
+                  li(class='nav-item')
+                    button(class='m-3 btn btn-sm btn-warning' onclick='stageTwo()' )
+                      | Drawn and Extracted
+                      br
+                      | the pattern
+                  li(class='nav-item')
+                    button(class='m-3 btn btn-sm btn-info' onclick='stageThree()' )
+                      | Done with the Upper
+                      br
+                      | and Sole
+                  li(class='nav-item')
+                    button(class='m-3 btn btn-sm btn-primary' onclick='stageFour()' )
+                      | Done with The
+                      br
+                      | Cleaning Stage
+                  li(class='nav-item')
+                    button(class='m-3 btn btn-sm btn-success' onclick='stageFive()' )
+                      | Job
+                      br
+                      | Complete
+                p(class='w3-large')
+                  b
+                    i(class='fa fa-asterisk fa-fw w3-margin-right w3-text-teal')
+                    | Progress
+                div(class='w3-light-grey w3-round-xlarge w3-small')
+                  div(class='alert alert-info' id="status" ) Status: #{orders.status}
+                  if orders.progress=="20%"
+                    div(style=`width:${orders.progress}` id='progress'  class='progress-bar bg-danger progress-bar-striped progress-bar-animated' ) #{orders.progress}
+                  if orders.progress=="40%"
+                    div(style=`width:${orders.progress}` id='progress' class='progress-bar bg-warning progress-bar-striped progress-bar-animated' ) #{orders.progress}
+                  if orders.progress=="60%"
+                    div(style=`width:${orders.progress}` id='progress' class='progress-bar bg-info progress-bar-striped progress-bar-animated' ) #{orders.progress}
+                  if orders.progress=="80%"
+                    div(style=`width:${orders.progress}` id='progress' class='progress-bar bg-primary progress-bar-striped progress-bar-animated' ) #{orders.progress}
+                  if orders.progress=="100%"
+                    div(style=`width:${orders.progress}` id='progress' class='progress-bar bg-success progress-bar-striped progress-bar-animated' ) #{orders.progress}
+                  if orders.progress=="0%"
+                    div(class=orders.classes id='progress' ) #{orders.progress}
+              br
+            form(action=`/${orders._id}` method='post')
+              .form-group
+                label Name:
+                input(type='text'  class='form-control' name='name' value=orders.name )
+              label Email Address:
+              div(class='form-group input-group mb-3')
+                input(type='email'  class='form-control' name='email' value=orders.email )
+                div(class='input-group-append')
+                  span(class='input-group-text') @example.com
+              .form-group
+                label Shoe Type:
+                select( class='form-control' name='particular' value=orders.particular)
+                  option(value=orders.particular) #{orders.particular}
+              .form-group
+                label How many Pair(s)
+                input(type='number'  class='form-control' name='pairs' value=orders.pairs )
+              .form-group
+                label Shoe Size
+                input(type='number'  class='form-control' name='size' value=orders.size)
+              .form-group
+                label Status
+                textarea(  class='form-control'  id='stat' name='status')=orders.status
+              .form-group
+                label  Progress
+                textarea(  class='form-control'  id='prog' name='progress' )=orders.progress
+              .form-group
+                label Designer:
+                select( class='form-control' name='designer' value=orders.designer)
+                  option(value=orders.designer) #{orders.designer}
+              .form-group
+                label Sole Type:
+                select( class='form-control' name='sole' value=orders.sole )
+                  option(value=orders.sole) #{orders.sole}
+              .form-group
+                label Description:
+                textarea(class='form-control' name='description'  )= orders.description
+              .form-group
+                input.m-2.btn.btn-success.btn-block(type='submit' value='Update')
+  script(src='javascripts/ajax.js')

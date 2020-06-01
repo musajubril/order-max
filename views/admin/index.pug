@@ -1,0 +1,54 @@
+extends layout
+block content
+  #content
+    nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+      button#sidebarToggleTop.btn.btn-link.d-md-none.rounded-circle.mr-3
+        i.fa.fa-bars
+      form.d-none.d-sm-inline-block.form-inline.mr-auto.ml-md-3.my-2.my-md-0.mw-100.navbar-search
+        .input-group
+          input#mySearch.form-control.bg-light.border-0.small(type='text' placeholder='Search for...' aria-label='Search' aria-describedby='basic-addon2')
+      ul.navbar-nav.ml-auto
+        .topbar-divider.d-none.d-sm-block
+        //  Nav Item - User Information 
+        li.nav-item.dropdown.no-arrow
+          a.nav-link.dropdown-toggle#userDropdown(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            span.mr-2.d-none.d-lg-inline.text-gray-600.small 
+        .dropdown-divider
+        li.nav-item.dropdown.no-arrow
+          a.nav-link(href='/users/logout')
+            span.mr-2.d-none.d-lg-inline.text-gray-600.small
+            i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+            | Logout
+
+    .container-fluid
+      .d-sm-flex.align-items-center.justify-content-between.mb-4
+        h1.h3.mb-0.text-gray-800 Dashboard
+      .m-3
+        .w3-row-padding
+          .w3-col-12
+            .w3-card.w3-round.w3-white
+              .w3-container.w3-padding
+                h2.w3-opacity.w3-center
+                  |Welcome  to Max
+                  sup 2
+                  br
+      .row
+        a.stretched-link.col-xl-3.col-md-6.mb-4(href='/order' style='text-decoration:none')
+          .card.border-left-primary.shadow.h-100.py-2
+            .card-body
+              .row.no-gutters.align-items-center
+                .col.mr-2
+                  .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1 Total Jobs Received 
+                  .h5.mb-0.font-weight-bold.text-gray-800= jobs
+                .col-auto
+                  i.fas.fa-calendar.fa-2x.text-gray-300
+        a.stretched-link.col-xl-3.col-md-6.mb-4(href='/accounts' style='text-decoration:none')
+          .card.border-left-success.shadow.h-100.py-2
+            .card-body
+              .row.no-gutters.align-items-center
+                .col.mr-2
+                  .text-xs.font-weight-bold.text-success.text-uppercase.mb-1 Amount Earned
+                  each price in prices
+                    .h5.mb-0.font-weight-bold.text-gray-800 ##{price.totalPrice}
+                .col-auto
+                  i.fas.fa-dollar-sign.fa-2x.text-gray-300

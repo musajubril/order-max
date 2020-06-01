@@ -1,0 +1,56 @@
+html
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width,initial-scale=1,shrink-to-fit=no')
+  meta(name='description' content)
+  meta(name='author' content)
+  title= title
+  //  Custom fonts for this template
+  link(rel='stylesheet' href='/css/bootstrap.min.css')
+  link(rel='stylesheet' href='/css/all.min.css')
+  link(href='/css/sb-admin-2.min.css' rel='stylesheet')
+  style(type='text/css').
+    /* Chart.js */
+    @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+  //  Page Wrapper 
+  #wrapper
+    ul.navbar-nav.bg-info.sidebar.sidebar-dark.accordion#accordionSidebar
+      //  Sidebar - Brand 
+      a.sidebar-brand.d-flex.align-items-center.justify-content-center(href='/admin')
+        .sidebar-brand-icon.rotate-n-15
+          i.fas.fa-laugh-wink
+        .sidebar-brand-text.mx-3 Admin
+          sup 2
+      hr.sidebar-divider.my-0
+      //  Nav Item - Dashboard 
+      li.nav-item.active
+        a.nav-link(href='/admin')
+          i.fas.fa-fw.fa-tachometer-alt
+          span Dashboard
+      hr.sidebar-divider
+      li.nav-item.active
+        a.nav-link(href='/admin/order')
+          i.fas.fa-fw.fa-list-alt
+          span Orders
+      hr.sidebar-divider
+      li.nav-item.active
+        a.nav-link(href='/admin/accounts')
+          i.fa-bank.fa
+          span Accounts
+      hr.sidebar-divider
+      hr.sidebar-divider.d-none.d-md-block
+      //  Sidebar Toggler (Sidebar) 
+      .text-center.d-none.d-md-inline
+        button.rounded-circle.border-0#sidebarToggle
+    #content-wrapper.d-flex.flex-column
+      
+       block content
+
+
+
+
+
+  script(src='/js/bootstrap.min.js')
+  script(src='/js/all.min.js')
+  script(src='/js/popper.min.js')
+  script(src='/js/jquery.min.js')

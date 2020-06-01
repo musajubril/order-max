@@ -1,0 +1,28 @@
+extends layout
+block content
+  #content
+    nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+      button#sidebarToggleTop.btn.btn-link.d-md-none.rounded-circle.mr-3
+        i.fa.fa-bars
+      form.d-none.d-sm-inline-block.form-inline.mr-auto.ml-md-3.my-2.my-md-0.mw-100.navbar-search
+        .input-group
+          input#mySearch.form-control.bg-light.border-0.small(type='text' placeholder='Search for...' aria-label='Search' aria-describedby='basic-addon2')
+      ul.navbar-nav.ml-auto
+        .topbar-divider.d-none.d-sm-block
+        //  Nav Item - User Information 
+        li.nav-item.dropdown.no-arrow
+          a.nav-link.dropdown-toggle#userDropdown(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            span.mr-2.d-none.d-lg-inline.text-gray-600.small 
+
+
+
+
+            .dropdown-divider
+            a.dropdown-item(href='#' data-toggle='modal' data-target='#logoutModal')
+              i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+              | Logout
+
+    .container-fluid
+      .text-center
+        .error.mx-auto(data-text=`${error.status}`)= error.status 
+        p.lead.text-gray-800.mb-5= message 

@@ -2,11 +2,7 @@ extends layout
 block content
   #content
     nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
-      button#sidebarToggleTop.btn.btn-link.d-md-none.rounded-circle.mr-3
-        i.fa.fa-bars
-      form.d-none.d-sm-inline-block.form-inline.mr-auto.ml-md-3.my-2.my-md-0.mw-100.navbar-search
-        .input-group
-          input#mySearch.form-control.bg-light.border-0.small(type='text' placeholder='Search for...' aria-label='Search' aria-describedby='basic-addon2')
+
       ul.navbar-nav.ml-auto
         .topbar-divider.d-none.d-sm-block
         //  Nav Item - User Information 
@@ -72,7 +68,7 @@ block content
                   if orders.progress=="0%"
                     div(class=orders.classes id='progress' ) #{orders.progress}
               br
-            form(action=`/${orders._id}` method='post')
+            form(action=`/admin/${orders._id}` method='post')
               .form-group
                 label Name:
                 input(type='text'  class='form-control' name='name' value=orders.name )
@@ -110,4 +106,4 @@ block content
                 textarea(class='form-control' name='description'  )= orders.description
               .form-group
                 input.m-2.btn.btn-success.btn-block(type='submit' value='Update')
-  script(src='javascripts/ajax.js')
+    script(src='/js/script.js')

@@ -2,11 +2,7 @@ extends layout
 block content
   #content
     nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
-      button#sidebarToggleTop.btn.btn-link.d-md-none.rounded-circle.mr-3
-        i.fa.fa-bars
-      form.d-none.d-sm-inline-block.form-inline.mr-auto.ml-md-3.my-2.my-md-0.mw-100.navbar-search
-        .input-group
-          input#mySearch.form-control.bg-light.border-0.small(type='text' placeholder='Search for...' aria-label='Search' aria-describedby='basic-addon2')
+
       ul.navbar-nav.ml-auto
         .topbar-divider.d-none.d-sm-block
         //  Nav Item - User Information 
@@ -33,7 +29,7 @@ block content
                   sup 2
                   br
       .row
-        a.stretched-link.col-xl-3.col-md-6.mb-4(href='/order' style='text-decoration:none')
+        a.stretched-link.col-xl-3.col-md-6.mb-4(href='/admin/order' style='text-decoration:none')
           .card.border-left-primary.shadow.h-100.py-2
             .card-body
               .row.no-gutters.align-items-center
@@ -42,7 +38,7 @@ block content
                   .h5.mb-0.font-weight-bold.text-gray-800= jobs
                 .col-auto
                   i.fas.fa-calendar.fa-2x.text-gray-300
-        a.stretched-link.col-xl-3.col-md-6.mb-4(href='/accounts' style='text-decoration:none')
+        a.stretched-link.col-xl-3.col-md-6.mb-4(href='/admin/accounts' style='text-decoration:none')
           .card.border-left-success.shadow.h-100.py-2
             .card-body
               .row.no-gutters.align-items-center

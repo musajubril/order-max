@@ -6,7 +6,7 @@ block content
         h1.text-center.mb-3
           i.fas.fa-sign-in-alt
           |  Login
-        form(action='/admin/login' method='POST')
+        form(action='/client/login' method='POST')
           .form-group
             label(for='email') Email
             input#email.form-control(type='email' name='email' placeholder='Enter Email')
@@ -16,4 +16,4 @@ block content
           button.btn.btn-primary.btn-block(type='submit') Login
         p.lead.mt-4
           | No Account? 
-          a(href='/admin/register') Register
+          a(href='/client/register') Register

@@ -1,6 +1,4 @@
-extends layout
-block content
-  .container-fluid
-    .text-center
-      .error.mx-auto(data-text=`${error.status}`)= error.status 
-      p.lead.text-gray-800.mb-5= message 
+.container-fluid
+  .text-center
+    .error.mx-auto(data-text=`${error.status}`)= error.status 
+    p.lead.text-gray-800.mb-5= message 

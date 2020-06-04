@@ -1,34 +1,51 @@
-var express = require('express');
-var path = require('path');
-var multer = require('multer')
-var bcrypt = require('bcryptjs')
-var passport = require('passport')
-var localStrategy = require('passport-local').Strategy
-var mongo = require('mongodb')
-var mongoose = require('mongoose')
-const errorHandlers = require('./handlers/errorHandlers');
-var app = express();
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
-app.use(express.json());
-app.use(express.urlencoded({
-    extended: false
-}));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(passport.initialize())
-app.use(passport.session())
-app.use('/', require('./routes/index.js'));
-app.use('/admin', require('./routes/admin.js'))
+const express = require('express');
+const mongoose = require('mongoose');
+const passport = require('passport');
+const path = require('path')
+const app = express();
+const session = require('express-session')
 const uri = process.env.ATLAS_URI || 'mongodb://localhost/mernOrder'
-mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex:true, useFindAndModify:false,
-useUnifiedTopology:true})
+// require('./handlers/Admin')(passport)
+require('./handlers/User')(passport)
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'pug');
+app.use(express.static(path.join(__dirname, 'public')));
+mongoose.connect(uri, {useNewUrlParser: true,
+  useCreateIndex:true,
+   useUnifiedTopology:true,
+   useFindAndModify: false
+ })
 const connection = mongoose.connection
 connection.once('open', ()=>{
-    console.log('MongoDB database connected succesfully')
+ console.log('MongoDB database connected succesfully')
 })
-var port = process.env.PORT || 5000
-const server = app.listen(port, ()=>{
-  console.log(`server is runnig on port: ${server.address().port}`)
+
+// EJS
+// app.use(EJS);
+
+// Express body parser
+app.use(express.urlencoded({ extended: true }));
+
+// Express session
+app.use(
+  session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+  })
+);
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Connect flash
+app.get('/',(req,res)=>{
+  res.render('home')
 })
-module.exports = app;
+// Routes
+app.use('/client', require('./routes/index.js'));
+app.use('/admin', require('./routes/admin.js'));
+
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, console.log(`Server started on port ${PORT}`));

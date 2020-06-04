@@ -1,8 +1,4 @@
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/complexProject')
-mongoose.Promise = global.Promise
-var db = mongoose.connection
-mongoose.Promise = global.Promise
 var NewsSchema = mongoose.Schema({
     particular: {
         type: String
@@ -11,16 +7,17 @@ var NewsSchema = mongoose.Schema({
         type: String
     },
    image: {
-        type: Buffer
-    },
-    contentType:{
         type: String
     },
-    path: {
+    email:{
+        type: String
+    },
+    brand: {
         type: String
     },
     date: {
-        type: String
+        type: String,
+        default: Date.now
     },
     description: {
         type: String
@@ -31,6 +28,4 @@ var NewsSchema = mongoose.Schema({
 
 
 var News = module.exports = mongoose.model('News', NewsSchema)
-module.exports.createNews = function (newNews, callback) {
-    newNews.save(callback)
-}
+module.exports= News

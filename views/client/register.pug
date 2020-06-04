@@ -11,7 +11,7 @@ block content
           each error in errors 
             li.alert.alert-danger.alert-dismissible= error.msg
 
-      form(action='/admin/register' method='POST')
+      form(action='/client/register' method='POST')
         .form-group
           label(for='name') Name
           input#name.form-control(type='name' name='name' placeholder='Enter Name')
@@ -29,4 +29,4 @@ block content
           Register →
       p.lead.mt-4
         | Have An Account? 
-        a(href='/admin/login') Login
+        a(href='/client/login') Login
